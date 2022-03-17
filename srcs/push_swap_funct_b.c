@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap_funct_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:17:14 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 18:36:09 by lde-alen         ###   ########.fr       */
+/*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
+/*   Updated: 2022/03/17 18:04:48 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
-{
-	push_swap(ac, av);
-	return (0);
-}
+int		sb();
+int		pb();
+int		rb();
+int		rrb();
