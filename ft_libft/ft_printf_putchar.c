@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   ft_printf_putchar.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 21:07:20 by lde-alen         ###   ########.fr       */
+/*   Created: 2021/12/21 16:50:10 by lde-alen          #+#    #+#             */
+/*   Updated: 2022/03/17 17:16:15 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-/*
-	set of numbers, or string of numbers, 
-	12 432 54 54 6 "12 77 45 76 8 96" 79 67 3467
-*/
-
-int	parser(t_ps *ps)
+int	ft_printf_putchar(va_list ap)
 {
+	int	c;
 
+	c = va_arg(ap, int);
+	ft_putchar(c);
+	return (1);
 }

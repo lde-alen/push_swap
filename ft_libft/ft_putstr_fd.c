@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: lde-alen <lde-alen@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 21:07:20 by lde-alen         ###   ########.fr       */
+/*   Created: 2021/12/20 03:20:54 by lde-alen          #+#    #+#             */
+/*   Updated: 2021/12/23 13:29:29 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-/*
-	set of numbers, or string of numbers, 
-	12 432 54 54 6 "12 77 45 76 8 96" 79 67 3467
-*/
-
-int	parser(t_ps *ps)
+/**
+ * @brief Outputs the string ’s’ to the given file descriptor.
+ * 
+ * @param s 
+ * @param fd 
+ */
+void	ft_putstr_fd(char *s, int fd)
 {
-
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

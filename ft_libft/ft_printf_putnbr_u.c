@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   ft_printf_putnbr_u.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 21:07:20 by lde-alen         ###   ########.fr       */
+/*   Created: 2021/12/21 16:50:17 by lde-alen          #+#    #+#             */
+/*   Updated: 2022/03/17 17:15:33 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-/*
-	set of numbers, or string of numbers, 
-	12 432 54 54 6 "12 77 45 76 8 96" 79 67 3467
-*/
-
-int	parser(t_ps *ps)
+int	ft_printf_putnbr_u(va_list ap)
 {
+	unsigned long int	nb;
 
+	nb = va_arg(ap, unsigned int);
+	return (ft_putnbr(nb));
 }

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: lde-alen <lde-alen@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 21:07:20 by lde-alen         ###   ########.fr       */
+/*   Created: 2021/12/20 03:19:55 by lde-alen          #+#    #+#             */
+/*   Updated: 2021/12/23 13:29:19 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-/*
-	set of numbers, or string of numbers, 
-	12 432 54 54 6 "12 77 45 76 8 96" 79 67 3467
-*/
-
-int	parser(t_ps *ps)
+/**
+ * @brief Returns the last element of the list.
+ * 
+ * @param last 
+ * @return t_list* 
+ */
+t_list	*ft_lstlast(t_list *last)
 {
-
+	if (!last)
+		return (NULL);
+	while (last->next)
+		last = last->next;
+	return (last);
 }
