@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_errors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:42:58 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/19 22:43:54 by lde-alen         ###   ########.fr       */
+/*   Created: 2022/03/19 21:48:42 by lde-alen          #+#    #+#             */
+/*   Updated: 2022/03/19 21:51:04 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	push_swap(int ac, char **av)
+void	ft_fputchar(char c)
 {
-	t_ps	*ps;
+	write(2, &c, 1);
+}
 
-	ft_check_errors(ac, av);
-	ps = ft_init(ac, av);
-	ft_parser(ps);
-	return (0);
+void	ft_fpustr(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_fputchar(str[i]);
+		i++;
+	}
+	exit(EXIT_SUCCESS);
 }

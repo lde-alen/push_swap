@@ -6,7 +6,7 @@
 #    By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 14:39:55 by lde-alen          #+#    #+#              #
-#    Updated: 2022/03/17 20:59:24 by lde-alen         ###   ########.fr        #
+#    Updated: 2022/03/19 22:56:36 by lde-alen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRCS		=	./srcs/main.c				\
 				./srcs/push_swap.c			\
 				./srcs/parser.c				\
 				./srcs/init.c				\
+				./srcs/ft_list.c			\
+				./srcs/ft_errors.c			\
+				./srcs/ft_print_errors.c	\
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -29,17 +32,17 @@ LIBFT		=	./ft_libft/libft.a
 CC			=	gcc
 
 $(NAME)		:	$(OBJS)
-				make -C ./ft_libft
-				$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+				@make -C ./ft_libft
+				@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
 
 all			:	$(NAME)
 
 clean		:
-				make clean -C ./ft_libft
-				rm -rf $(OBJS)
+				@make clean -C ./ft_libft
+				@rm -rf $(OBJS)
 
 fclean		:	clean
-				make fclean -C ./ft_libft
-				rm -rf $(NAME)
+				@make fclean -C ./ft_libft
+				@rm -rf $(NAME)
 
-re			:	all clean fclean re
+re			:	clean fclean all

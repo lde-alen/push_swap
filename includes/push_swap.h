@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/19 21:11:01 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/19 23:52:57 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,34 @@
 
 # include "../ft_libft/libft.h"
 
-typedef struct s_stack
+typedef struct s_node
 {
 	int				nb;
-	struct t_stack	*prev;
-	struct t_stack	*next;
-}	t_stack;
+	int				index;
+	struct s_node	*prev;
+	struct s_node	*next;
+}	t_node;
 
 typedef struct s_ps
 {
 	int		ac;
-	int		av;
-	t_stack	*s_a;
-	t_stack	**h_a;
-	t_stack	*s_b;
-	t_stack	*h_b;
+	char	**av;
+	int		index_a;
+	int		index_b;
+	t_node	*s_a;
+	t_node	*s_b;
+	t_node	**h_a;
+	t_node	**h_b;
 }	t_ps;
 
-void	ft_init(t_ps *ps, int ac, char **av);
+void	ft_fputchar(char c);
+void	ft_fpustr(char *str);
 int		push_swap(int ac, char **av);
+int		ft_parser(t_ps *ps);
+t_node	*ft_init_list(void);
+t_ps	*ft_init(int ac, char **av);
+void	ft_check_errors(int ac, char **av);
+int		ft_new_node(int nb, t_ps *ps);
+void	ft_print_list(t_node *lst, t_ps *ps);
 
 #endif

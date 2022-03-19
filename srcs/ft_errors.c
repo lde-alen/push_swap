@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:42:58 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/19 22:43:54 by lde-alen         ###   ########.fr       */
+/*   Created: 2022/03/19 21:36:11 by lde-alen          #+#    #+#             */
+/*   Updated: 2022/03/19 21:52:39 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	push_swap(int ac, char **av)
+void	ft_check_errors(int ac, char **av)
 {
-	t_ps	*ps;
-
-	ft_check_errors(ac, av);
-	ps = ft_init(ac, av);
-	ft_parser(ps);
-	return (0);
+	(void)av;
+	if (ac == 1)
+		ft_fpustr("Error.");
 }

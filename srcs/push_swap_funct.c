@@ -6,12 +6,12 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:05:24 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 18:06:04 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/19 21:27:00 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		ss();
-int		rr();
-int		rrr();
+// int		ss();
+// int		rr();
+// int		rrr();
