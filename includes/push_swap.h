@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/17 20:01:44 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/19 21:11:01 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ typedef struct s_ps
 {
 	int		ac;
 	int		av;
-	t_stack	s_a;
-	t_stack	*h_a;
-	t_stack	s_b;
+	t_stack	*s_a;
+	t_stack	**h_a;
+	t_stack	*s_b;
 	t_stack	*h_b;
 }	t_ps;
 
