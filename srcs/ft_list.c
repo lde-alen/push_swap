@@ -6,11 +6,23 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/19 23:58:10 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:00:18 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+t_node	*ft_add_last(int nb, t_ps *ps)
+{
+	t_node	*new;
+
+	new = (t_node *)malloc(sizeof(t_node));
+	new->index = ps->s_a->index + 1;
+	new->nb = nb;
+	new->next = ps->h_a;
+	new->prev = ps->s_a;
+	return (new);
+}
 
 t_node	*ft_init_list(void)
 {
@@ -25,43 +37,16 @@ t_node	*ft_init_list(void)
 	return (new);
 }
 
-void	ft_print_list(t_node *lst, t_ps *ps)
+void	ft_print_list(t_node *list)
 {
-	while (lst->next)
-	{
-		ft_printf("index =%d\n", lst->index);
-		ft_printf("nb =%d\n", lst->nb);
-		lst = lst->next;
-		if (lst == *ps->h_a)
-			break ;
-	}
-}
+	t_node	*tmp;
 
-/*
-	PS IS ALWAYS THE LAST ELEMENT PLEASE CARE !!!!!!!
-	AKA THIS IS A LIST ADD LAST;
-	NOTE: MAKE A PROPER ADD FUNCTION AND MODIFY
-*/
-int	ft_new_node(int nb, t_ps *ps)
-{
-	t_node	*new;
-	void	*tmp;
-
-	new = (t_node *)malloc(sizeof(t_node));
-	if (ps->s_a->next == NULL && ps->s_a->prev == NULL)
+	tmp = list;
+	ft_printf("nb = %d\n", list->nb);
+	list = list->next;
+	while (list != tmp)
 	{
-		new->index = 1;
-		ps->s_a->prev = new;
-		new->prev = *ps->h_a;
+		ft_printf("nb = %d\n", list->nb);
+		list = list->next;
 	}
-	else
-	{
-		new->index = ps->s_a->prev->index + 1;
-		tmp = ps->s_a;
-		new->prev = tmp;
-	}
-	ps->s_a->nb = nb;
-	ps->s_a->next = new;
-	new->next = *ps->h_a;
-	return (0);
 }

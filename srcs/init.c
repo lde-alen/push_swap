@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:44:44 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/19 23:32:01 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:59:49 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_ps	*ft_init(int ac, char **av)
 	ps->av = av;
 	ps->s_a = ft_init_list();
 	ps->s_b = ft_init_list();
-	ps->h_a = &ps->s_a;
-	ps->h_b = &ps->s_b;
+	ps->h_a = ps->s_a;
+	ps->h_b = ps->s_b;
 	return (ps);
 }
