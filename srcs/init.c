@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:44:44 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/20 12:59:49 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/20 15:37:28 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ t_ps	*ft_init(int ac, char **av)
 	ps->s_b = ft_init_list();
 	ps->h_a = ps->s_a;
 	ps->h_b = ps->s_b;
+	ps->arg = ft_tab_to_str(ac, av);
+	ps->param = ft_split(ps->arg, ' ');
 	return (ps);
 }

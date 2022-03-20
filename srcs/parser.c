@@ -6,11 +6,30 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/20 13:41:15 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/20 15:47:29 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+char	*ft_tab_to_str(int ac, char **av)
+{
+	int		i;
+	char	*str;
+
+	i = 1;
+	str = (char *)malloc(sizeof(char));
+	if (!str)
+		return (NULL);
+	str = "";
+	while (i < ac)
+	{
+		str = ft_strjoin(str, av[i]);
+		str = ft_strjoin(str, " ");
+		i++;
+	}
+	return (str);
+}
 
 /*
 	set of numbers, or string of numbers,
@@ -21,13 +40,13 @@ int	ft_parser(t_ps *ps)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
-	while (i < ps->ac)
+	while (ps->param[i])
 	{
 		if (ps->s_a->next == NULL && ps->s_a->prev == NULL)
 		{
-			ps->s_a->nb = ft_atoi(ps->av[i]);
+			ps->s_a->nb = ft_atoi(ps->param[i]);
 			ps->s_a->prev = ps->s_a;
 			ps->s_a->next = ps->h_a;
 			j++;
@@ -35,7 +54,7 @@ int	ft_parser(t_ps *ps)
 		}
 		else
 		{
-			ps->s_a->next = ft_add_last(ft_atoi(ps->av[i]), ps);
+			ps->s_a->next = ft_add_last(ft_atoi(ps->param[i]), ps);
 			ps->s_a = ps->s_a->next;
 			j++;
 			i++;

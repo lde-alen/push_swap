@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/20 13:38:43 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/20 15:54:18 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_ps
 {
 	int		ac;
 	char	**av;
+	char	*arg;
+	char	**param;
 	int		index_a;
 	int		index_b;
 	t_node	*s_a;
@@ -44,5 +46,6 @@ t_ps	*ft_init(int ac, char **av);
 void	ft_check_errors(int ac, char **av);
 t_node	*ft_add_last(int nb, t_ps *ps);
 void	ft_print_list(t_node *list);
+char	*ft_tab_to_str(int ac, char **av);
 
 #endif
