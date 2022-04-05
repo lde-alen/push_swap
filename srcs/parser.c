@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/20 15:47:29 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:43:17 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_tab_to_str(int ac, char **av)
 	str = "";
 	while (i < ac)
 	{
+		if (av[i][0] == '\0')
+			ft_fputstr("Error.\n");
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");
 		i++;
@@ -60,6 +62,6 @@ int	ft_parser(t_ps *ps)
 			i++;
 		}
 	}
-	ft_print_list(ps->h_a);
+	// ft_print_list(ps->h_a);
 	return (0);
 }

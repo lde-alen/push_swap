@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:48:42 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/19 21:51:04 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:34:10 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_fputchar(char c)
 	write(2, &c, 1);
 }
 
-void	ft_fpustr(char *str)
+void	ft_fputstr(char *str)
 {
 	size_t	i;
 

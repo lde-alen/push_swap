@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/20 15:54:18 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:34:16 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_ps
 }	t_ps;
 
 void	ft_fputchar(char c);
-void	ft_fpustr(char *str);
+void	ft_fputstr(char *str);
 int		push_swap(int ac, char **av);
 int		ft_parser(t_ps *ps);
 t_node	*ft_init_list(void);
