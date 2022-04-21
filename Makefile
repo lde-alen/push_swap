@@ -6,7 +6,7 @@
 #    By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 14:39:55 by lde-alen          #+#    #+#              #
-#    Updated: 2022/03/19 22:56:36 by lde-alen         ###   ########.fr        #
+#    Updated: 2022/04/21 19:35:13 by lde-alen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS		=	./srcs/main.c				\
 
 OBJS		=	$(SRCS:.c=.o)
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g3
 
 LIBFT		=	./ft_libft/libft.a
 

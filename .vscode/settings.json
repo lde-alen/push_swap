@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"libft.h": "c",
+		"stdio.h": "c",
+		"ft_atoi": "c",
+		"sstream": "c",
+		"mlx.h": "c",
+		"pipex.h": "c"
+	}
+}
