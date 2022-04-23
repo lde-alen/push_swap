@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:36:11 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/21 20:24:08 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/23 17:11:48 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,22 @@ void	ft_check_errors(int ac, char **av)
 			i = 0;
 			while (av[j][i])
 			{
-				if (ft_isdigit(av[j][i]) == 0
-						&& av[j][i] != '-' && av[j][i] != ' ')
-					ft_fputstr("Error: Invalid input.\n");
+				if (!ft_isdigit(av[j][i]))
+				{
+					if (av[j][i] != ' ' && av[j][i] != '-')
+						ft_fputstr("Error.\n1");
+					else if (av[j][i] == '-')
+					{
+						if (av[j][i + 1] == 0 || av[j][i + 1] == ' ')
+							ft_fputstr("Error.\n2");
+						else if (ft_isdigit(av[j][i + 1]))
+						{
+							if (i > 0 && (ft_isdigit(av[j][i - 1])
+								|| av[j][i - 1] == '-'))
+								ft_fputstr("Error.\n3");
+						}
+					}
+				}
 				i++;
 			}
 			j++;
