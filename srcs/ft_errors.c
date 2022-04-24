@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:36:11 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/23 19:11:21 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/24 13:13:56 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,12 @@ void	ft_check_errors(int ac, char **av)
 			i = 0;
 			while (av[j][i])
 			{
-				if (!ft_isdigit(av[j][i]))
-				{
-					if (av[j][i] != ' ' && av[j][i] != '-')
-						ft_fputstr("Error1.\n");
-					else if (av[j][i] == '-')
-					{
-						if (av[j][i + 1] == 0 || av[j][i + 1] == ' ')
-							ft_fputstr("Error2.\n");
-						else if (ft_isdigit(av[j][i + 1]))
-						{
-							if (i > 0 && (ft_isdigit(av[j][i - 1])
-								|| av[j][i - 1] == '-'))
-								ft_fputstr("Error3.\n");
-						}
-					}
-				}
+				if (!ft_isdigit(av[j][i]) && ((av[j][i] != ' '
+				&& av[j][i] != '-') || (av[j][i] == '-'
+				&& (av[j][i + 1] == 0 || av[j][i + 1] == ' '
+				|| (ft_isdigit(av[j][i + 1]) && (i > 0 
+				&& (ft_isdigit(av[j][i - 1]))))))))
+					ft_fputstr("Error1.\n");
 				i++;
 			}
 			j++;

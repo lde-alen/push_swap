@@ -6,28 +6,28 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/21 21:38:21 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/24 13:10:29 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// int		sa(t_stack sa)
+// int		s(t_stack s)
 // {
 
 // }
 
-// int		pa(t_stack sa)
+// int		p(t_stack s)
 // {
 
 // }
 
-// int		ra(t_stack sa)
+// int		r(t_stack s)
 // {
 
 // }
 
-// int		rra(t_stack sa)
+// int		rr(t_stack s)
 // {
 
 // }

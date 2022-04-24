@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/23 15:48:08 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/24 13:13:38 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_tab_to_str(int ac, char **av)
 	str = "";
 	while (i < ac)
 	{
-		if (av[1][0] == '\0')
+		if ((av[1][0] == '\0' && ac == 2) || (av[1][0] == ' ' && ac == 2
+		&& ft_strlen(av[1]) == 1))
 			ft_fputstr("Error: Invalid argument.\n");
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");
@@ -63,6 +64,6 @@ int	ft_parser(t_ps *ps)
 		}
 	}
 	ps->s_a = ps->s_a->next;
+	ft_print_list(ps->h_a);
 	return (0);
 }
-	// ft_print_list(ps->h_a);
