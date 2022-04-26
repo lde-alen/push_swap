@@ -5,6 +5,7 @@
 		"ft_atoi": "c",
 		"sstream": "c",
 		"mlx.h": "c",
-		"pipex.h": "c"
+		"pipex.h": "c",
+		"push_swap.h": "c"
 	}
 }

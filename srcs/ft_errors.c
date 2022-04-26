@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:36:11 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/25 00:57:18 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:51:33 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_dup_check(t_ps *ps)
 		}
 		ps->s_a = ps->s_a->next;
 	}
+	ps->s_a = ps->s_a->next;
 }
 
 void	ft_check_errors(int ac, char **av)
@@ -47,7 +48,7 @@ void	ft_check_errors(int ac, char **av)
 				if (!ft_isdigit(av[j][i]) && ((av[j][i] != ' '
 				&& av[j][i] != '-') || (av[j][i] == '-'
 				&& (av[j][i + 1] == 0 || av[j][i + 1] == ' '
-				|| (ft_isdigit(av[j][i + 1]) && (i > 0 
+				|| (ft_isdigit(av[j][i + 1]) && (i > 0
 				&& (ft_isdigit(av[j][i - 1]))))))))
 					ft_fputstr("Error1.\n");
 				i++;

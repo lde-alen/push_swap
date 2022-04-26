@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/24 13:13:38 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/26 19:58:51 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int	ft_parser(t_ps *ps)
 		}
 	}
 	ps->s_a = ps->s_a->next;
-	ft_print_list(ps->h_a);
+	ft_print_list(ps->s_a);
 	return (0);
 }

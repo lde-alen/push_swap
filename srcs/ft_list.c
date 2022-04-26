@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/03/20 13:00:18 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:48:14 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	ft_print_list(t_node *list)
 		ft_printf("nb = %d\n", list->nb);
 		list = list->next;
 	}
+	list = list->next;
 }

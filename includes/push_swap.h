@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/24 23:30:06 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:33:01 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ typedef struct s_ps
 
 void	ft_fputchar(char c);
 void	ft_fputstr(char *str);
+void	sa(t_ps *ps);
+void	ra(t_ps *ps);
+void	pa(t_ps *ps);
+void	rra(t_ps *ps);
+void	sb(t_ps *ps);
+void	rb(t_ps *ps);
+void	pb(t_ps *ps);
+void	rrb(t_ps *ps);
+void	ss(t_ps *ps);
+void	rr(t_ps *ps);
+void	rrr(t_ps *ps);
+
 int		push_swap(int ac, char **av);
 int		ft_parser(t_ps *ps);
 int		ft_check(t_ps *ps);
