@@ -6,7 +6,7 @@
 #    By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 14:39:55 by lde-alen          #+#    #+#              #
-#    Updated: 2022/04/21 19:35:13 by lde-alen         ###   ########.fr        #
+#    Updated: 2022/04/28 20:16:09 by lde-alen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS		=	./srcs/main.c				\
 				./srcs/ft_list.c			\
 				./srcs/ft_errors.c			\
 				./srcs/ft_print_errors.c	\
+				./srcs/ft_utils.c			\
 
 OBJS		=	$(SRCS:.c=.o)
 

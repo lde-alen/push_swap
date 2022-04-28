@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/26 17:54:04 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/28 20:08:51 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,22 @@ void	sb(t_ps *ps)
 // 	ft_putstr_fd("pb\n", 1);
 // }
 
-// /*
-// 	rb (rotate b): Shift up all elements of stack b by 1.
-// 	The first element becomes the last one.
-// */
-// void	rb(t_ps *ps)
-// {
-// 	ft_putstr_fd("rb\n", 1);
-// }
+/*
+	rb (rotate b): Shift up all elements of stack b by 1.
+	The first element becomes the last one.
+*/
+void	rb(t_ps *ps)
+{
+	ft_swap(&ps->s_b->nb, &ps->s_b->prev->nb);
+	ps->s_b = ps->s_b->prev;
+	while (ps->s_b->prev != ps->h_a)
+	{
+		ft_swap(&ps->s_b->nb, &ps->s_b->prev->nb);
+		ps->s_b = ps->s_b->prev;
+	}
+	ps->s_b = ps->s_b->prev;
+	ft_putstr_fd("rb\n", 1);
+}
 
 // /*
 // 	rrb (reverse rotate b): Shift down all elements of stack b by 1.

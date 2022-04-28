@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/26 17:48:14 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/28 20:07:30 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,27 @@ void	ft_print_list(t_node *list)
 {
 	t_node	*tmp;
 
+	ft_printf("\nPrinting list with next\n");
 	tmp = list;
 	ft_printf("nb = %d\n", list->nb);
+	ft_printf("index = %d\n", list->index);
 	list = list->next;
 	while (list != tmp)
 	{
 		ft_printf("nb = %d\n", list->nb);
+		ft_printf("index = %d\n", list->index);
 		list = list->next;
 	}
-	list = list->next;
+	// ft_printf("nb current = %d\n", list->nb);
+	ft_printf("\nPrinting list with prev\n");
+	ft_printf("nb = %d\n", list->nb);
+	ft_printf("index = %d\n", list->index);
+	list = list->prev;
+	while (list != tmp)
+	{
+		ft_printf("nb = %d\n", list->nb);
+		ft_printf("index = %d\n", list->index);
+		list = list->prev;
+	}
+	// ft_printf("nb current = %d\n", list->nb);
 }

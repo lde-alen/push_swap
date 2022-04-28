@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/26 17:33:01 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/28 20:14:52 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ss(t_ps *ps);
 void	rr(t_ps *ps);
 void	rrr(t_ps *ps);
 
+void	ft_swap(int *a, int *b);
 int		push_swap(int ac, char **av);
 int		ft_parser(t_ps *ps);
 int		ft_check(t_ps *ps);
