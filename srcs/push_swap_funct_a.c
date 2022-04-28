@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/28 20:23:22 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/29 01:04:33 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ void	sa(t_ps *ps)
 void	ra(t_ps *ps)
 {
 	ft_swap(&ps->s_a->nb, &ps->s_a->prev->nb);
-	ps->s_a = ps->s_a->prev;
+	ps->s_a = ps->s_a->prev->prev;
 	while (ps->s_a->prev != ps->h_a)
 	{
-		ft_swap(&ps->s_a->nb, &ps->s_a->prev->nb);
+		ft_swap(&ps->s_a->nb, &ps->s_a->next->nb);
 		ps->s_a = ps->s_a->prev;
 	}
+	ft_swap(&ps->s_a->nb, &ps->s_a->next->nb);
 	ps->s_a = ps->s_a->prev;
 	ft_putstr_fd("ra\n", 1);
 }
