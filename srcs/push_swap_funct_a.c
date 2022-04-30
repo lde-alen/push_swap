@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 03:49:41 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/30 18:12:32 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@
 */
 void	sa(t_ps *ps)
 {
-	int	tmp;
-
-	tmp = ps->s_a->nb;
-	ps->s_a->nb = ps->s_a->next->nb;
-	ps->s_a->next->nb = tmp;
+	ft_swap(&ps->s_a->nb, &ps->s_a->next->nb);
 	ft_putstr_fd("sa\n", 1);
 }
 
@@ -36,34 +32,30 @@ void	ra(t_ps *ps)
 	ft_putstr_fd("ra\n", 1);
 }
 
+void	ft_add_a(t_ps *ps)
+{
+	t_node	*tmp;
+
+	tmp = ps->s_b->next;
+	ps->s_a->prev = ps->s_b;
+	ps->h_a = ps->s_a->prev;
+	ps->s_a->prev->prev = ps->t_a;
+	ps->s_a->prev->next = ps->s_a;
+	ps->t_a = ps->h_a->prev;
+}
+
 /*
 	pa (push a): Take the first element at the top of b and put it at the top of a
 	Do nothing if b is empty.
 */
 void	pa(t_ps *ps)
 {
-	t_node	*save;
-	t_node	*stock;
-
-	if (!ps->s_a)
+	if (!ps->s_b)
 		return ;
-	save = ps->s_a;
-	delete_node(ps->s_a);
-	if (ps->s_b)
-	{
-		stock = ps->s_b->prev;
-		ps->s_b->prev = save;
-		ps->s_b->prev->next = ps->s_b;
-		ps->s_b->prev->prev = stock;
-		ps->s_b->prev->prev->next = save;
-		ps->s_b = ps->s_b->prev;
-	}
+	else if (!ps->s_a)
+		ft_init_a(ps);
 	else
-	{
-		ps->s_b = save;
-		ps->s_b->next = ps->s_b;
-		ps->s_b->prev = ps->s_b;
-	}
+		ft_add_a(ps);
 	ft_putstr_fd("pa\n", 1);
 }
 

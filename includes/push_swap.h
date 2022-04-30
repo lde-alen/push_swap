@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 02:13:51 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/30 18:05:40 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ void	ss(t_ps *ps);
 void	rr(t_ps *ps);
 void	rrr(t_ps *ps);
 
+void	ft_add_a(t_ps *ps);
+void	ft_add_b(t_ps *ps);
+void	ft_init_b(t_ps *ps);
+void	ft_init_a(t_ps *ps);
 t_node	*ft_add_new(int nb, t_ps *ps);
 t_node	*ft_add_node(int nb, t_ps *ps);
 void	delete_node(t_node *src);

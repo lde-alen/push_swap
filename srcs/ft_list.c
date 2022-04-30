@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 02:38:41 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/30 17:41:26 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,3 @@ void	ft_print_list(t_node *list)
 	ft_printf("nb = %d\n", list->nb);
 }
 
-void	delete_node(t_node *src)
-{
-	if (src == src->next)
-		src = NULL;
-	else
-	{
-		src->prev->next = src->next;
-		src->next->prev = src->prev;
-		src = src->next;
-	}
-}

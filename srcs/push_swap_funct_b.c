@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/29 20:01:14 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/30 18:13:13 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,32 @@
 */
 void	sb(t_ps *ps)
 {	
-	int	tmp;
-
-	tmp = ps->s_b->nb;
-	ps->s_b->nb = ps->s_b->next->nb;
-	ps->s_b->next->nb = tmp;
+	ft_swap(&ps->s_b->nb, &ps->s_b->next->nb);
 	ft_putstr_fd("sb\n", 1);
+}
+
+void	ft_add_b(t_ps *ps)
+{
+	t_node	*tmp;
+
+	tmp = ps->s_a->next;
+	ps->s_b->prev = ps->s_a;
+	ps->h_b = ps->s_b->prev;
+	ps->s_b->prev->prev = ps->t_b;
+	ps->s_b->prev->next = ps->s_b;
+	ps->t_b = ps->h_b->prev;
+	if (tmp == ps->h_b)
+	{
+		ps->h_a = NULL;
+		ps->t_a = NULL;
+		ps->s_a = NULL;
+	}
+	else
+	{
+		ps->h_a = tmp;
+		ps->h_a->prev = ps->t_a;
+		ps->t_a->next = ps->h_a;
+	}
 }
 
 /*
@@ -32,28 +52,12 @@ void	sb(t_ps *ps)
 */
 void	pb(t_ps *ps)
 {
-	t_node	*save;
-	t_node	*stock;
-
-	if (!ps->s_b)
+	if (!ps->s_a)
 		return ;
-	save = ps->s_b;
-	delete_node(ps->s_b);
-	if (ps->s_a)
-	{
-		stock = ps->s_a->prev;
-		ps->s_a->prev = save;
-		ps->s_a->prev->next = ps->s_a;
-		ps->s_a->prev->prev = stock;
-		ps->s_a->prev->prev->next = save;
-		ps->s_a = ps->s_a->prev;
-	}
+	else if (!ps->s_b)
+		ft_init_b(ps);
 	else
-	{
-		ps->s_a = save;
-		ps->s_a->next = ps->s_a;
-		ps->s_a->prev = ps->s_a;
-	}
+		ft_add_b(ps);
 	ft_putstr_fd("pb\n", 1);
 }
 
