@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:05:24 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/28 20:24:47 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/29 19:39:15 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,18 @@ void	ss(t_ps *ps)
 // */
 void	rr(t_ps *ps)
 {
-	ft_swap(&ps->s_a->nb, &ps->s_a->prev->nb);
-	ps->s_a = ps->s_a->prev;
-	while (ps->s_a->prev != ps->h_a)
-	{
-		ft_swap(&ps->s_a->nb, &ps->s_a->prev->nb);
-		ps->s_a = ps->s_a->prev;
-	}
-	ps->s_a = ps->s_a->prev;
-	ft_swap(&ps->s_b->nb, &ps->s_b->prev->nb);
-	ps->s_b = ps->s_b->prev;
-	while (ps->s_b->prev != ps->h_a)
-	{
-		ft_swap(&ps->s_b->nb, &ps->s_b->prev->nb);
-		ps->s_b = ps->s_b->prev;
-	}
-	ps->s_b = ps->s_b->prev;
+	ps->s_a = ps->s_a->next;
+	ps->s_b = ps->s_b->next;
 	ft_putstr_fd("rr\n", 1);
 }
 
-// /*
-// 	rrr : rra and rrb at the same time.
-// */
-// void	rrr(t_ps *ps)
-// {
-// 	ft_putstr_fd("rrr\n", 1);
-// }
+/*
+	rrr : rra and rrb at the same time.
+*/
+void	rrr(t_ps *ps)
+{
+	ps->s_a = ps->s_a->prev;
+	ps->s_b = ps->s_b->prev;
+	ft_putstr_fd("rrr\n", 1);
+}
 

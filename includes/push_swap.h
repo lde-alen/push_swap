@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/28 20:14:52 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/30 02:13:51 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 typedef struct s_node
 {
 	int				nb;
-	int				index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -32,9 +31,11 @@ typedef struct s_ps
 	int		index_a;
 	int		index_b;
 	t_node	*s_a;
-	t_node	*s_b;
 	t_node	*h_a;
+	t_node	*t_a;
+	t_node	*s_b;
 	t_node	*h_b;
+	t_node	*t_b;
 }	t_ps;
 
 void	ft_fputchar(char c);
@@ -51,6 +52,9 @@ void	ss(t_ps *ps);
 void	rr(t_ps *ps);
 void	rrr(t_ps *ps);
 
+t_node	*ft_add_new(int nb, t_ps *ps);
+t_node	*ft_add_node(int nb, t_ps *ps);
+void	delete_node(t_node *src);
 void	ft_swap(int *a, int *b);
 int		push_swap(int ac, char **av);
 int		ft_parser(t_ps *ps);

@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/28 20:06:08 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/04/30 04:21:22 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,15 @@ int	ft_parser(t_ps *ps)
 	j = 0;
 	while (ps->param[i])
 	{
-		if (ps->s_a->next == NULL && ps->s_a->prev == NULL)
+		if (ps->s_a == NULL)
 		{
-			ps->s_a->nb = ft_atoi(ps->param[i]);
-			ps->s_a->prev = ps->s_a;
-			ps->s_a->next = ps->h_a;
+			ps->s_a = ft_add_new(ft_atoi(ps->param[i]), ps);
 			j++;
 			i++;
 		}
 		else
 		{
-			ps->s_a->next = ft_add_last(ft_atoi(ps->param[i]), ps);
+			ps->s_a->next = ft_add_node(ft_atoi(ps->param[i]), ps);
 			ps->s_a = ps->s_a->next;
 			tmp = ps->s_a;
 			j++;
