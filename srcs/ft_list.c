@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 17:41:26 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/01 16:38:12 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ void	ft_print_list(t_node *list)
 {
 	t_node	*tmp;
 
+	if (!list)
+	{
+		ft_putstr("list is null\n");
+		return ;
+	}
 	ft_printf("\nPrinting list with next\n");
 	tmp = list;
 	ft_printf("nb = %d\n", list->nb);
@@ -69,15 +74,12 @@ void	ft_print_list(t_node *list)
 		list = list->next;
 	}
 	list = list->prev;
-	// ft_printf("nb current = %d\n", list->nb);
 	ft_printf("\nPrinting list with prev\n");
-	// ft_printf("nb = %d\n", list->nb);
 	while (list != tmp)
 	{
 		ft_printf("nb = %d\n", list->nb);
 		list = list->prev;
 	}
-	// ft_printf("nb current = %d\n", list->nb);
 	ft_printf("nb = %d\n", list->nb);
 }
 

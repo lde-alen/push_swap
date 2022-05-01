@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 18:13:13 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/01 18:56:11 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,42 +22,56 @@ void	sb(t_ps *ps)
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	ft_add_b(t_ps *ps)
-{
-	t_node	*tmp;
-
-	tmp = ps->s_a->next;
-	ps->s_b->prev = ps->s_a;
-	ps->h_b = ps->s_b->prev;
-	ps->s_b->prev->prev = ps->t_b;
-	ps->s_b->prev->next = ps->s_b;
-	ps->t_b = ps->h_b->prev;
-	if (tmp == ps->h_b)
-	{
-		ps->h_a = NULL;
-		ps->t_a = NULL;
-		ps->s_a = NULL;
-	}
-	else
-	{
-		ps->h_a = tmp;
-		ps->h_a->prev = ps->t_a;
-		ps->t_a->next = ps->h_a;
-	}
-}
-
 /*
 	pb (push b): Take the first element at the top of a and put it at the top of b.
 	Do nothing if a is empty.
 */
 void	pb(t_ps *ps)
 {
+	t_node	*tmp;
+
+	tmp = ps->s_a;
 	if (!ps->s_a)
 		return ;
 	else if (!ps->s_b)
-		ft_init_b(ps);
+	{
+		ps->s_a = ps->s_a->next;
+		ps->s_a->prev = ps->t_a;
+		ps->t_a->next = ps->s_a;
+		ps->h_a = ps->s_a;
+		ps->s_b = tmp;
+		ps->s_b-> next = ps->s_b;
+		ps->s_b->prev = ps->s_b;
+		ps->h_b = ps->s_b;
+		ps->t_b = ps->s_b;
+	}
+	else if (ps->s_a->next == ps->s_a
+		&& ps->s_a->prev == ps->s_a)
+	{
+		ps->s_b->prev = tmp;
+		ps->s_b->prev->next = ps->s_b;
+		ps->s_b = ps->s_b->prev;
+		ps->s_b->prev = ps->t_b;
+		ps->h_b = ps->s_b;
+		ps->t_b->next = ps->s_b;
+		ps->s_a = NULL;
+		ps->t_a = NULL;
+		ps->h_a = NULL;
+
+	}
 	else
-		ft_add_b(ps);
+	{
+		ps->s_a = ps->s_a->next;
+		ps->s_a->prev = ps->t_a;
+		ps->t_a->next = ps->s_a;
+		ps->h_a = ps->s_a;
+		ps->s_b->prev = tmp;
+		ps->s_b->prev->next = ps->s_b;
+		ps->s_b = ps->s_b->prev;
+		ps->s_b->prev = ps->t_b;
+		ps->h_b = ps->s_b;
+		ps->t_b->next = ps->s_b;
+	}
 	ft_putstr_fd("pb\n", 1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 18:05:40 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:17:01 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	ss(t_ps *ps);
 void	rr(t_ps *ps);
 void	rrr(t_ps *ps);
 
+void push_to_other_list(t_node *from, t_node *to);
+void delete_node(t_node *from);
 void	ft_add_a(t_ps *ps);
 void	ft_add_b(t_ps *ps);
 void	ft_init_b(t_ps *ps);

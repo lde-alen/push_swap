@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 18:12:32 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:17:38 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,8 @@ void	sa(t_ps *ps)
 void	ra(t_ps *ps)
 {
 	ps->s_a = ps->s_a->next;
+	ps->h_a = ps->s_a;
 	ft_putstr_fd("ra\n", 1);
-}
-
-void	ft_add_a(t_ps *ps)
-{
-	t_node	*tmp;
-
-	tmp = ps->s_b->next;
-	ps->s_a->prev = ps->s_b;
-	ps->h_a = ps->s_a->prev;
-	ps->s_a->prev->prev = ps->t_a;
-	ps->s_a->prev->next = ps->s_a;
-	ps->t_a = ps->h_a->prev;
 }
 
 /*
@@ -50,12 +39,7 @@ void	ft_add_a(t_ps *ps)
 */
 void	pa(t_ps *ps)
 {
-	if (!ps->s_b)
-		return ;
-	else if (!ps->s_a)
-		ft_init_a(ps);
-	else
-		ft_add_a(ps);
+	(void)ps;
 	ft_putstr_fd("pa\n", 1);
 }
 
