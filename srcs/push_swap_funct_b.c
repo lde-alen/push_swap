@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/01 18:56:11 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:04:02 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	pb(t_ps *ps)
 		ps->s_a = NULL;
 		ps->t_a = NULL;
 		ps->h_a = NULL;
-
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/01 15:17:38 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/07 01:50:12 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,49 @@ void	ra(t_ps *ps)
 */
 void	pa(t_ps *ps)
 {
-	(void)ps;
+	t_node	*tmp;
+
+	tmp = ps->s_b;
+	if (!ps->s_b)
+		return ;
+	else if (!ps->s_a)
+	{
+		ps->s_b = ps->s_b->next;
+		ps->s_b->prev = ps->t_b;
+		ps->t_b->next = ps->s_b;
+		ps->h_b = ps->s_b;
+		ps->s_a = tmp;
+		ps->s_a-> next = ps->s_a;
+		ps->s_a->prev = ps->s_a;
+		ps->h_a = ps->s_a;
+		ps->t_a = ps->s_a;
+	}
+	else if (ps->s_b->next == ps->s_b
+		&& ps->s_b->prev == ps->s_b)
+	{
+		ps->s_a->prev = tmp;
+		ps->s_a->prev->next = ps->s_a;
+		ps->s_a = ps->s_a->prev;
+		ps->s_a->prev = ps->t_a;
+		ps->h_a = ps->s_a;
+		ps->t_a->next = ps->s_a;
+		ps->s_b = NULL;
+		ps->t_b = NULL;
+		ps->h_b = NULL;
+	}
+	else
+	{
+		ps->s_b = ps->s_b->next;
+		ps->s_b->prev = ps->t_b;
+		ps->t_b->next = ps->s_b;
+		ps->h_b = ps->s_b;
+		ps->s_a->prev = tmp;
+		ps->s_a->prev->next = ps->s_a;
+		ps->s_a = ps->s_a->prev;
+		ps->s_a->prev = ps->t_a;
+		ps->h_a = ps->s_a;
+		ps->t_a->next = ps->s_a;
+	}
 	ft_putstr_fd("pa\n", 1);
 }
 

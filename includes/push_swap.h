@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/01 15:17:01 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/07 03:40:18 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_ps
 	char	**param;
 	int		index_a;
 	int		index_b;
+	int		i;
+	int		j;
 	t_node	*s_a;
 	t_node	*h_a;
 	t_node	*t_a;
@@ -37,6 +39,12 @@ typedef struct s_ps
 	t_node	*h_b;
 	t_node	*t_b;
 }	t_ps;
+
+typedef enum e_boolean
+{
+	false,
+	true
+}	t_bool;
 
 void	ft_fputchar(char c);
 void	ft_fputstr(char *str);
@@ -52,24 +60,25 @@ void	ss(t_ps *ps);
 void	rr(t_ps *ps);
 void	rrr(t_ps *ps);
 
-void push_to_other_list(t_node *from, t_node *to);
-void delete_node(t_node *from);
+void	ft_sort(t_ps *ps);
+void	ft_sort_neg(t_ps *ps);
+void	ft_sort_pos(t_ps *ps);
 void	ft_add_a(t_ps *ps);
 void	ft_add_b(t_ps *ps);
 void	ft_init_b(t_ps *ps);
 void	ft_init_a(t_ps *ps);
-t_node	*ft_add_new(int nb, t_ps *ps);
-t_node	*ft_add_node(int nb, t_ps *ps);
-void	delete_node(t_node *src);
+void	ft_check_errors(int ac, char **av);
+void	ft_print_list(t_node *list);
+void	ft_dup_check(t_ps *ps);
 void	ft_swap(int *a, int *b);
+char	*ft_tab_to_str(int ac, char **av);
 int		push_swap(int ac, char **av);
 int		ft_parser(t_ps *ps);
 int		ft_check(t_ps *ps);
+t_bool	ft_is_sorted(t_ps *ps);
+t_node	*ft_add_new(int nb, t_ps *ps);
+t_node	*ft_add_node(int nb, t_ps *ps);
 t_node	*ft_init_list(void);
 t_ps	*ft_init(int ac, char **av);
-void	ft_check_errors(int ac, char **av);
 t_node	*ft_add_last(int nb, t_ps *ps);
-void	ft_print_list(t_node *list);
-char	*ft_tab_to_str(int ac, char **av);
-void	ft_dup_check(t_ps *ps);
 #endif
