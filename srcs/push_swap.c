@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:42:58 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/09 00:57:55 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/09 02:18:28 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	ft_sort_neg(t_ps *ps)
 
 	k = 1;
 	ps->s_a = ps->h_a;
+	if (ft_is_sorted(ps) == true)
+	{
+		return ;
+	}
 	while (k <= ps->nb_numbers)
 	{
 		if ((ps->s_a->nb >> 31) & 1)
@@ -26,9 +30,7 @@ void	ft_sort_neg(t_ps *ps)
 			ps->j++;
 		}
 		else
-		{
 			ra(ps);
-		}
 		k++;
 	}
 	if (ps->s_b != NULL)
@@ -40,7 +42,6 @@ void	ft_sort_neg(t_ps *ps)
 			k++;
 		}
 	}
-
 }
 
 void	ft_sort_pos(t_ps *ps)
@@ -85,6 +86,10 @@ void	ft_sort(t_ps *ps)
 	ps->i = 0;
 	while (ps->i < 31)
 	{
+		if (ft_is_sorted(ps) == true)
+		{
+			return ;
+		}
 		ps->j = 0;
 		ft_sort_pos(ps);
 		ps->i++;
