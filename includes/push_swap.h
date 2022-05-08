@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/07 03:40:18 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/08 22:22:49 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_ps
 	char	**av;
 	char	*arg;
 	char	**param;
+	int		nb_numbers;
 	int		index_a;
 	int		index_b;
 	int		i;

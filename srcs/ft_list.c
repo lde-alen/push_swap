@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/01 16:38:12 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/09 00:51:53 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_node	*ft_add_new(int nb, t_ps *ps)
 	ps->t_a = new;
 	new->next = ps->h_a;
 	new->prev = ps->t_a;
+	ps->nb_numbers = 1;
 	return (new);
 }
 
@@ -40,6 +41,7 @@ t_node	*ft_add_node(int nb, t_ps *ps)
 	ps->s_a->next = node;
 	ps->h_a->prev = node;
 	ps->t_a = node;
+	ps->nb_numbers++;
 	return (node);
 }
 
@@ -74,12 +76,12 @@ void	ft_print_list(t_node *list)
 		list = list->next;
 	}
 	list = list->prev;
-	ft_printf("\nPrinting list with prev\n");
-	while (list != tmp)
-	{
-		ft_printf("nb = %d\n", list->nb);
-		list = list->prev;
-	}
-	ft_printf("nb = %d\n", list->nb);
+	// ft_printf("\nPrinting list with prev\n");
+	// while (list != tmp)
+	// {
+	// 	ft_printf("nb = %d\n", list->nb);
+	// 	list = list->prev;
+	// }
+	// ft_printf("nb = %d\n", list->nb);
 }
 

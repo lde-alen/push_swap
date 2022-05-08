@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/05 16:04:02 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/09 00:41:42 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	pb(t_ps *ps)
 		ps->h_b = ps->s_b;
 		ps->t_b = ps->s_b;
 	}
-	else if (ps->s_a->next == ps->s_a
-		&& ps->s_a->prev == ps->s_a)
+	else if (ps->s_a->next == ps->h_a
+		&& ps->s_a->prev == ps->h_a)
 	{
 		ps->s_b->prev = tmp;
 		ps->s_b->prev->next = ps->s_b;
@@ -81,6 +81,8 @@ void	pb(t_ps *ps)
 void	rb(t_ps *ps)
 {
 	ps->s_b = ps->s_b->next;
+	ps->h_b = ps->s_b;
+	ps->t_b = ps->s_b->prev;
 	ft_putstr_fd("rb\n", 1);
 }
 
@@ -91,5 +93,7 @@ void	rb(t_ps *ps)
 void	rrb(t_ps *ps)
 {
 	ps->s_b = ps->s_b->prev;
+	ps->h_b = ps->s_b;
+	ps->t_b = ps->s_b->prev;
 	ft_putstr_fd("rrb\n", 1);
 }
