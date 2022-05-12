@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/10 22:47:37 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/12 15:01:43 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef struct s_node
 {
 	int				nb;
-	int				index;
+	unsigned int	index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -40,7 +40,9 @@ typedef struct s_ps
 	t_node	*s_b;
 	t_node	*h_b;
 	t_node	*t_b;
+	t_node	*sorted;
 }	t_ps;
+
 
 typedef enum e_boolean
 {
