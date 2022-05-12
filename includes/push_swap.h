@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:39:43 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/08 22:22:49 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:47:37 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct s_node
 {
 	int				nb;
+	int				index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;

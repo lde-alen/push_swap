@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/09 00:42:33 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:17:26 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	pa(t_ps *ps)
 		ps->h_a = ps->s_a;
 		ps->t_a = ps->s_a;
 	}
-	else if (ps->s_b->next == ps->s_b
-		&& ps->s_b->prev == ps->s_b)
+	else if (ps->s_b->next == ps->h_b
+		&& ps->s_b->prev == ps->h_b)
 	{
 		ps->s_a->prev = tmp;
 		ps->s_a->prev->next = ps->s_a;

@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/09 00:51:53 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:48:06 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*ft_add_new(int nb, t_ps *ps)
 	new->nb = nb;
 	ps->h_a = new;
 	ps->t_a = new;
+	new->index = 0;
 	new->next = ps->h_a;
 	new->prev = ps->t_a;
 	ps->nb_numbers = 1;
@@ -42,6 +43,7 @@ t_node	*ft_add_node(int nb, t_ps *ps)
 	ps->h_a->prev = node;
 	ps->t_a = node;
 	ps->nb_numbers++;
+	ps->s_a->index = 0;
 	return (node);
 }
 
