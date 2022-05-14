@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/12 16:32:57 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/15 01:34:31 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@ char	*ft_tab_to_str(int ac, char **av)
 	char	*str;
 
 	i = 1;
-	str = (char *)malloc(sizeof(char));
-	if (!str)
-		return (NULL);
-	str = "";
+	str = ft_strdup("");
 	while (i < ac)
 	{
 		if ((av[1][0] == '\0' && ac == 2) || (av[1][0] == ' ' && ac == 2
 		&& ft_strlen(av[1]) == 1))
-			ft_fputstr("Error: Invalid argument.\n");
+			ft_fputstr("Error\n");
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");
 		i++;

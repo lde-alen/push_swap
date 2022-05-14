@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/12 17:14:52 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/14 23:37:19 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,3 +89,22 @@ void	ft_print_list(t_node *list)
 	// ft_printf("nb = %d\n", list->nb);
 }
 
+void	ft_dup_list(t_ps *ps)
+{
+	t_node	*tmp;
+
+	ps->sorted = (t_node *)malloc(sizeof(t_node));
+	tmp = ps->sorted;
+	while (ps->s_a->next != ps->h_a)
+	{
+		ps->sorted->nb = ps->s_a->nb;
+		ps->sorted->next = (t_node *)malloc(sizeof(t_node));
+		ps->sorted->next->prev = ps->sorted;
+		ps->sorted = ps->sorted->next;
+		ps->s_a = ps->s_a->next;
+	}
+	ps->sorted->nb = ps->s_a->nb;
+	ps->sorted->next = tmp;
+	ps->sorted = ps->sorted->next;
+	ps->s_a = ps->s_a->next;
+}

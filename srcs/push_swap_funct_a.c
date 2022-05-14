@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:52 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/12 12:02:51 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/15 01:49:40 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 void	sa(t_ps *ps)
 {
 	ft_swap(&ps->s_a->nb, &ps->s_a->next->nb);
+	ft_swap_u(&ps->s_a->index, &ps->s_a->next->index);
 	ft_putstr_fd("sa\n", 1);
 }
 
@@ -46,30 +47,10 @@ void	pa(t_ps *ps)
 	if (!ps->s_b)
 		return ;
 	else if (!ps->s_a)
-	{
-		ps->s_b = ps->s_b->next;
-		ps->s_b->prev = ps->t_b;
-		ps->t_b->next = ps->s_b;
-		ps->h_b = ps->s_b;
-		ps->s_a = tmp;
-		ps->s_a-> next = ps->s_a;
-		ps->s_a->prev = ps->s_a;
-		ps->h_a = ps->s_a;
-		ps->t_a = ps->s_a;
-	}
+		ft_first_node_a(ps, tmp);
 	else if (ps->s_b->next == ps->h_b
 		&& ps->s_b->prev == ps->h_b)
-	{
-		ps->s_a->prev = tmp;
-		ps->s_a->prev->next = ps->s_a;
-		ps->s_a = ps->s_a->prev;
-		ps->s_a->prev = ps->t_a;
-		ps->h_a = ps->s_a;
-		ps->t_a->next = ps->s_a;
-		ps->s_b = NULL;
-		ps->t_b = NULL;
-		ps->h_b = NULL;
-	}
+		ft_last_node_b(ps, tmp);
 	else
 	{
 		ps->s_b = ps->s_b->next;
