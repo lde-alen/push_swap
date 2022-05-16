@@ -6,12 +6,22 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:36:11 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/15 01:30:18 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:46:18 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * Checks for duplicates by looping through all the numbers of the stack and
+ * comparing them with the entire stack.
+ * 
+ * Note: This function should have been better if I actually only gave the stack
+ * as parameter instead of giving the entire main structure. Could also have been
+ * done in recursive.
+ *
+ * Takes as parameter t_ps *ps
+ */
 void	ft_dup_check(t_ps *ps)
 {
 	t_node	*tmp;
@@ -30,6 +40,15 @@ void	ft_dup_check(t_ps *ps)
 	ps->s_a = ps->s_a->next;
 }
 
+/**
+ * This function checks for everything! Beffore allocating any memory this
+ * function checks if there are only numbers after this function you can
+ * expect perfect input.
+ * 
+ * Note: I am not too proud of this parser as It could have looked better but
+ * eh..
+ * I really wanted to do it in one function so....kinkey
+ */
 void	ft_check_errors(int ac, char **av)
 {
 	int		i;

@@ -6,12 +6,17 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:44:44 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/04/30 18:05:24 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:25:17 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * Wanna day I was going to bigga hotel, well nothing would have existed
+ * if the hotel didn't exit. Same to same here I initialize and do everything
+ * for my structure to work.
+ */
 t_ps	*ft_init(int ac, char **av)
 {
 	t_ps	*ps;
@@ -32,6 +37,11 @@ t_ps	*ft_init(int ac, char **av)
 	return (ps);
 }
 
+/**
+ * 	Initializes stack B when needed.
+ * If you are reading this I am disappointed you are worth
+ * more than this fam.
+ */
 void	ft_init_b(t_ps *ps)
 {
 	t_node	*tmp;
@@ -47,6 +57,9 @@ void	ft_init_b(t_ps *ps)
 	ps->t_a->next = ps->h_a;
 }
 
+/**
+ *  -..- does thos smiley have a piggy nose or is it just me?
+ */
 void	ft_init_a(t_ps *ps)
 {
 	t_node	*tmp;

@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 02:28:19 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/15 03:05:17 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 09:35:21 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int	ft_atoi(const char *str)
 			neg = -1;
 	while (str[i] >= '0' && str[i] <= '9')
 		res = (res * 10) + (str[i++] - '0');
-	check_resaz(res);
+	check_resaz(res * neg);
 	return (res * neg);
 }

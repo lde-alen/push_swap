@@ -6,12 +6,19 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/15 01:34:31 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:19:17 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * This is the coffee maker. Does the tineaz bitty end of the parsing but this
+ * allows me to convert a 2D array into a single array separated by a space
+ * int order for me to be able to parse everythig and setup the nodes.
+ * 
+ * Note: I told you... bring the bring and do the do man c'mon..
+ */
 char	*ft_tab_to_str(int ac, char **av)
 {
 	int		i;
@@ -31,10 +38,16 @@ char	*ft_tab_to_str(int ac, char **av)
 	return (str);
 }
 
-/*
-	set of numbers, or string of numbers,
-	12 432 54 54 6 "12 77 45 76 8 96" 79 67 3467
-*/
+/**
+ * This function assumes perfect input. It takes the atoi of the parameter
+ * and adds it to a node creating a doubly circular linked list with each
+ * number in a node. The first condition is there in case the list is
+ * completely empty and it also does the initial linkage to the node
+ * that setups the rest of the list.
+ * 
+ * Note: Could have been done differently but it is not too bad. If you want more
+ * description go do your own reasearches. :)
+ */
 int	ft_parser(t_ps *ps)
 {
 	int		i;

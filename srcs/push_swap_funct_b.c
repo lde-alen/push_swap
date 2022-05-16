@@ -6,26 +6,27 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:00:51 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/15 01:49:37 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:41:13 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*
-	sb (swap b): Swap the first 2 elements at the top of stack b.
-	Do nothing if there is only one or no elements.
-*/
+/**
+ * sb (swap b): Swap the first 2 elements at the top of stack b.
+ * Do nothing if there is only one or no elements.
+ */
 void	sb(t_ps *ps)
 {	
 	ft_swap(&ps->s_b->nb, &ps->s_b->next->nb);
+	ft_swap_u(&ps->s_b->index, &ps->s_b->next->index);
 	ft_putstr_fd("sb\n", 1);
 }
 
-/*
-	pb (push b): Take the first element at the top of a and put it at the top of b.
-	Do nothing if a is empty.
-*/
+/**
+ * pb (push b): Take the first element at the top of a and put
+ * it at the top of b. Do nothing if a is empty.
+ */
 void	pb(t_ps *ps)
 {
 	t_node	*tmp;
@@ -54,10 +55,10 @@ void	pb(t_ps *ps)
 	ft_putstr_fd("pb\n", 1);
 }
 
-/*
-	rb (rotate b): Shift up all elements of stack b by 1.
-	The first element becomes the last one.
-*/
+/**
+ * rb (rotate b): Shift up all elements of stack b by 1.
+ * The first element becomes the last one.
+ */
 void	rb(t_ps *ps)
 {
 	ps->s_b = ps->s_b->next;
@@ -66,10 +67,10 @@ void	rb(t_ps *ps)
 	ft_putstr_fd("rb\n", 1);
 }
 
-/*
-	rrb (reverse rotate b): Shift down all elements of stack b by 1.
-	The last element becomes the first one.
-*/
+/**
+ * rrb (reverse rotate b): Shift down all elements of stack b by 1.
+ * The last element becomes the first one.
+ */
 void	rrb(t_ps *ps)
 {
 	ps->s_b = ps->s_b->prev;

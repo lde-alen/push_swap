@@ -6,12 +6,16 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:47 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/14 23:37:19 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:37:23 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * Adds new element to the stack A this is essentially used when it is the
+ * first node.
+ */
 t_node	*ft_add_new(int nb, t_ps *ps)
 {
 	t_node	*new;
@@ -29,6 +33,10 @@ t_node	*ft_add_new(int nb, t_ps *ps)
 	return (new);
 }
 
+/**
+ * adds node to the rest of the list..
+ * rtfm my guy.. rtfm..
+ */
 t_node	*ft_add_node(int nb, t_ps *ps)
 {
 	t_node	*node;
@@ -47,6 +55,11 @@ t_node	*ft_add_node(int nb, t_ps *ps)
 	return (node);
 }
 
+/**
+ * Initializationation
+ * 
+ * nodes knows it as dad else it wouldnt exist.
+ */
 t_node	*ft_init_list(void)
 {
 	t_node	*new;
@@ -59,36 +72,15 @@ t_node	*ft_init_list(void)
 	return (new);
 }
 
-void	ft_print_list(t_node *list)
-{
-	t_node	*tmp;
-
-	if (!list)
-	{
-		ft_putstr("list is null\n");
-		return ;
-	}
-	ft_printf("\nPrinting list with next\n");
-	tmp = list;
-	ft_printf("nb = %d\n", list->nb);
-	ft_printf("index = %d\n\n", list->index);
-	list = list->next;
-	while (list != tmp)
-	{
-		ft_printf("nb = %d\n", list->nb);
-		ft_printf("index = %d\n\n", list->index);
-		list = list->next;
-	}
-	list = list->prev;
-	// ft_printf("\nPrinting list with prev\n");
-	// while (list != tmp)
-	// {
-	// 	ft_printf("nb = %d\n", list->nb);
-	// 	list = list->prev;
-	// }
-	// ft_printf("nb = %d\n", list->nb);
-}
-
+/**
+ * The hidden savant who takes dna's and just duplicate shizzle
+ * yeah mah nizzle this is it.
+ * 
+ * Don't even start I know the next and prevs are a bit messed up
+ * but this code has a specific purpose so I don't have to bother with the rest
+ * are you my evaluator? yes? then I will tell you why.. no? then sounds like a
+ * you problem B)
+ */
 void	ft_dup_list(t_ps *ps)
 {
 	t_node	*tmp;

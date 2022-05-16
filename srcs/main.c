@@ -6,12 +6,15 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:17:14 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/15 02:42:39 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:46:11 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * You mad bro?
+ */
 int	main(int ac, char **av)
 {
 	push_swap(ac, av);
