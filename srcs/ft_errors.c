@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:36:11 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/16 14:51:07 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 22:57:48 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ void	ft_dup_check(t_ps *ps)
 		while (tmp != ps->h_a)
 		{
 			if (ps->s_a->nb == tmp->nb)
+			{
+				ft_free_list(ps->s_a);
+				ft_mini_america(ps);
 				ft_fputstr("Error\n");
+			}
 			tmp = tmp->next;
 		}
 		ps->s_a = ps->s_a->next;

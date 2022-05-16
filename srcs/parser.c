@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/16 15:58:25 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:19:57 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * 
  * Note: I told you... bring the bring and do the do man c'mon..
  */
-char	*ft_tab_to_str(int ac, char **av)
+char	*ft_tab_to_str(int ac, char **av, t_ps *ps)
 {
 	int		i;
 	char	*str;
@@ -28,6 +28,12 @@ char	*ft_tab_to_str(int ac, char **av)
 	str = ft_strdup("");
 	while (i < ac)
 	{
+		if (av[i][0] == '\0')
+		{
+			free (str);
+			free (ps);
+			ft_fputstr("Error\n");
+		}
 		if ((av[1][0] == '\0' && ac == 2) || (av[1][0] == ' ' && ac == 2
 		&& ft_strlen(av[1]) == 1))
 		{
@@ -58,7 +64,7 @@ int	ft_parser(t_ps *ps)
 
 	i = 0;
 	if (!ps->param[i])
-		ft_fputstr("Error\n");
+		ft_mini_america(ps);
 	while (ps->param[i])
 	{
 		if (ps->s_a == NULL)

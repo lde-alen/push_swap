@@ -6,16 +6,28 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 14:20:56 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/16 10:49:03 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:11:37 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /**
+ * Sometimes in life you need freedom but not too much, so this is a mini
+ * murica for you
+ */
+void	ft_mini_america(t_ps *ps)
+{
+	free (ps->arg);
+	ft_free_arr(ps->param);
+	free (ps);
+	ft_fputstr("Error\n");
+}
+
+/**
  *  >.> .... figure it out...
  */
-static void	ft_free_arr(char **array)
+void	ft_free_arr(char **array)
 {
 	int	i;
 
@@ -33,7 +45,7 @@ static void	ft_free_arr(char **array)
  * 
  * Note: -.-
  */
-static void	ft_free_list(t_node *stack)
+void	ft_free_list(t_node *stack)
 {
 	t_node	*head;
 	t_node	*tmp;
