@@ -8,6 +8,7 @@
 		"pipex.h": "c",
 		"push_swap.h": "c",
 		"random": "c",
-		"chrono": "c"
+		"chrono": "c",
+		"algorithm": "c"
 	}
 }

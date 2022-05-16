@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:36:36 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/16 11:19:17 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:58:25 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ char	*ft_tab_to_str(int ac, char **av)
 	{
 		if ((av[1][0] == '\0' && ac == 2) || (av[1][0] == ' ' && ac == 2
 		&& ft_strlen(av[1]) == 1))
+		{
+			free (str);
 			ft_fputstr("Error\n");
+		}
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, " ");
 		i++;
@@ -54,6 +57,8 @@ int	ft_parser(t_ps *ps)
 	t_node	*tmp;
 
 	i = 0;
+	if (!ps->param[i])
+		ft_fputstr("Error\n");
 	while (ps->param[i])
 	{
 		if (ps->s_a == NULL)

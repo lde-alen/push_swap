@@ -6,7 +6,7 @@
 #    By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/19 09:20:19 by lde-alen          #+#    #+#              #
-#    Updated: 2022/03/17 17:13:53 by lde-alen         ###   ########.fr        #
+#    Updated: 2022/05/16 14:10:21 by lde-alen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 OBJS_B	=	$(SRCS_B:.c=.o)
 
-CFLAGS	+= -Wall -Werror -Wextra
+CFLAGS	+= -Wall -Werror -Wextra -g3
 
 $(NAME)	:	$(OBJS)
 			$(LIB) $(NAME) $(OBJS)

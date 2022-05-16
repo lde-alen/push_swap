@@ -6,7 +6,7 @@
 /*   By: lde-alen <lde-alen@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 02:28:19 by lde-alen          #+#    #+#             */
-/*   Updated: 2022/05/16 09:35:21 by lde-alen         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:09:02 by lde-alen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	check_resaz(long long res)
 {
 	if (res > 2147483647 || res < -2147483648)
 	{
-		ft_putendl_fd("Error\n", 2);
+		ft_putendl_fd("Error", 2);
 		exit(EXIT_FAILURE);
 	}
 }

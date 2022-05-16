@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "Build",
-            "command": "make all",
+            "command": "make re",
         }
     ],
     "version": "2.0.0"
